@@ -1,9 +1,10 @@
+import { from } from "rxjs";
+
+let numbers = [1, 5, 10];
+let source = from(numbers);
+
 function component() {
-    const element = document.createElement('div');
+  source.subscribe((x) => console.log(x));
+}
 
-    element.innerHTML = "teste";
-
-    return element;
-  }
-
-  document.body.appendChild(component());
+component();
