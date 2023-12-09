@@ -1,34 +1,26 @@
-import { from, Observable } from "rxjs";
+import { fromEvent } from "rxjs";
+import { delay, map, filter } from "rxjs/operators";
 
-let numbers = [1,5,10];
-let source = from(numbers);
+interface mouseTrack {
+  x: number;
+  y: number;
+}
 
+let circle = document.getElementById('circle');
+let source = fromEvent(document, 'mousemove').pipe(
+  map((e: MouseEvent) => {
+    return {x: e.clientX, y: e.clientY}
+  })
+)
 
-let sourceInstance = new Observable(subscriber => {
-  for (let n of numbers) {
-    if (n > 5) {
-      subscriber.error('Aconteceu um erro esperado!');
-    }
+function onNext(value: mouseTrack) {
+  console.log(value)
+  circle.style.left = `${value.x}px`;
+  circle.style.top = `${value.y}px`;
+}
 
-    subscriber.next(n);
-    subscriber.complete();
-  }
-  subscriber.complete();
-})
-
-
-const myObserver = {
-  next: (x: number) => { 
-    console.log(x) 
-  },
+source.subscribe({
+  next: (value: mouseTrack) => onNext(value),
   error: (e: Error) => console.log(e),
-  complete: () => console.log('Complete'),
-}
-
-function component() {
-  source.subscribe(myObserver)
-
-  sourceInstance.subscribe(myObserver)
-}
-
-component()
+  complete: () => console.log(),
+})
