@@ -1,5 +1,9 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav [fixedInViewport]="true" [mode]="'push'"></mat-sidenav>
+  <mat-sidenav #sidenav
+    [fixedInViewport]="true"
+    [mode]="this.isSmallScreen ? 'over' : 'side'"
+    [opened]="sideNavOpened"
+  ></mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
       <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
