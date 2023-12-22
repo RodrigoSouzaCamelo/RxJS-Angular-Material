@@ -10,9 +10,20 @@
 <h1>Loading - Waiting case</h1>
 
 <mat-progress-bar [value]="queryValue" [mode]="queryMode" color="warn"></mat-progress-bar>
-
 <br/>
 
 <h1>Progress bar with Buffer</h1>
 
 <mat-progress-bar [bufferValue]="bufferValue" [value]="bufferValuePercent" [mode]="bufferMode" color="warn"></mat-progress-bar>
+<br/>
+
+<h1>Spinner</h1>
+
+<mat-spinner color="primary"></mat-spinner>
+<mat-spinner color="accent"></mat-spinner>
+<mat-spinner color="warn"></mat-spinner>
+<br/>
+
+<h1>Spinner Progress</h1>
+
+<mat-progress-spinner [value]="loadingPercent" color="primary"></mat-progress-spinner>
