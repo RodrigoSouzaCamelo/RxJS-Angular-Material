@@ -1,1 +1,85 @@
-<p>tabs works!</p>
+<h1>Simple Tabs</h1>
+
+<mat-tab-group mat-align-tabs="start" animationDuration="500ms">
+  <mat-tab label="Tab Name">Content</mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>
+      Settings
+    </ng-template>
+    Content
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>
+      Person
+    </ng-template>
+    Content
+  </mat-tab>
+</mat-tab-group>
+
+<br />
+<br />
+<br />
+
+<h1>Tabs - Stretch and below</h1>
+
+<mat-tab-group
+  mat-stretch-tabs
+  mat-align-tabs="start"
+  headerPosition="below"
+  class="mat-elevation-z4"
+>
+  <mat-tab label="Tab Name">Content</mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>
+      Settings
+    </ng-template>
+    Content
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>
+      Person
+    </ng-template>
+    Content
+  </mat-tab>
+</mat-tab-group>
+
+<br />
+<br />
+<br />
+
+<h1>Tabs - Color</h1>
+
+<mat-tab-group
+  color="warn"
+  mat-stretch-tabs
+  mat-align-tabs="start"
+  headerPosition="below"
+  class="mat-elevation-z4"
+  backgroundColor="primary"
+>
+  <mat-tab label="Tab Name">Content</mat-tab>
+  <mat-tab>
+    <div class="mat-tab">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">settings</mat-icon>
+        Settings
+      </ng-template>
+      <h1>Settings</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum suscipit totam molestias, accusantium vero quidem temporibus atque, voluptatibus, accusamus eum ea fuga dolor facilis laborum? Deleniti voluptatibus est nisi accusantium!</p>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <div class="mat-tab">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">person</mat-icon>
+        Person
+      </ng-template>
+      <h1>Person</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum suscipit totam molestias, accusantium vero quidem temporibus atque, voluptatibus, accusamus eum ea fuga dolor facilis laborum? Deleniti voluptatibus est nisi accusantium!</p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
