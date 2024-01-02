@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
     FormFieldInputComponent,
     ProgressSpinnerComponent,
     TabsComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    SnackbarComponent
   ],
   imports: [
     FormsModule,
