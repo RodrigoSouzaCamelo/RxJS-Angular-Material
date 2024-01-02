@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@angular/cdk/platform'
+import { Platform } from '@angular/cdk/platform';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-datepicker',
@@ -7,9 +8,10 @@ import { Platform } from '@angular/cdk/platform'
   styleUrls: ['./datepicker.component.scss']
 })
 export class DatepickerComponent implements OnInit {
-  public startDate: Date = new Date(Date.now());
-  public minDate: Date = new Date(this.startDate.getFullYear(), this.startDate.getMonth() - 1, this.startDate.getDate())
-  public maxDate: Date = new Date(this.startDate.getFullYear(), this.startDate.getMonth() + 1, this.startDate.getDate())
+  //moment([2024, 1, 2])
+  public startDate = moment();
+  public minDate = moment().subtract(1, 'months');
+  public maxDate = moment().add(1, 'months');
 
   constructor(private platform: Platform) { }
 
