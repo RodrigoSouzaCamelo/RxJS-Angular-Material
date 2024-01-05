@@ -1,10 +1,17 @@
-<p>dialog-modal works!</p>
-<button mat-button (click)="closeDialog()">
-  Close
-  <mat-icon>close</mat-icon>
-</button>
+<h1 mat-dialog-title>{{data}}</h1>
 
-<button mat-button color="warn" mat-dialog-close>
-  Close
-  <mat-icon>close</mat-icon>
-</button>
+<mat-dialog-content>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quis iusto odit delectus ipsum? Hic necessitatibus rem doloremque neque tenetur, molestiae dolores beatae, optio vitae maxime eaque pariatur, distinctio odio?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">
+    Close
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <button mat-button color="warn" mat-dialog-close>
+    Close
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>

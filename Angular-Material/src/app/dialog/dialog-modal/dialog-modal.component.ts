@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-modal',
@@ -8,7 +8,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DialogModalComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<DialogModalComponent>) { }
+  constructor(private dialogRef: MatDialogRef<DialogModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: string) { }
 
   ngOnInit(): void {
   }
