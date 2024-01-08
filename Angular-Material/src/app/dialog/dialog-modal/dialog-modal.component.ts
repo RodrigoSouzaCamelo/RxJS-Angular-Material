@@ -15,7 +15,7 @@ export class DialogModalComponent implements OnInit {
   }
 
   closeDialog() {
-    this.dialogRef.close();
+    this.dialogRef.close("Returned Bazinga");
   }
 
 }
