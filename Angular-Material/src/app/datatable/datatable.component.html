@@ -1,1 +1,19 @@
-<p>datatable works!</p>
+<h1>Datatable</h1>
+
+<div class="mat-elevation-z4">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container *ngFor="let coluna of colunas; let i = index">
+
+      <ng-container [matColumnDef]="coluna">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{colunasMapeadas[i]}}</mat-header-cell>
+        <mat-cell *matCellDef="let movie">{{movie[coluna]}}</mat-cell>
+      </ng-container>
+
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+    <mat-row *matRowDef="let movie; columns: colunas"></mat-row>
+  </mat-table>
+
+  <mat-paginator pageSize="10" [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+</div>
