@@ -1,5 +1,10 @@
 <h1>Datatable</h1>
 
+<mat-form-field>
+  <mat-label>Filtro</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="ex.: Matrix">
+</mat-form-field>
+
 <div class="mat-elevation-z4">
   <mat-table [dataSource]="dataSource" matSort>
     <ng-container *ngFor="let coluna of colunas; let i = index">
@@ -10,6 +15,10 @@
       </ng-container>
 
     </ng-container>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">Movie not found.</td>
+    </tr>
 
     <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
     <mat-row *matRowDef="let movie; columns: colunas"></mat-row>
